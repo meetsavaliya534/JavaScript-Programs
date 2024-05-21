@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Dynamic DropDown Demo</title>
+</head>
+<script type="text/javascript">
+	var opt_one = new Array('Rajkot', 'Ahmedabad', 'Baroda', 'Surat');
+  	var opt_two = new Array('Dilhi', 'Kolkatta', 'Chennai', 'Bangluru', 'Ahmedabad');
+
+  function FillDropDown() 
+  {
+    var f = document.myform;
+    var which_r = null;
+    if (f) 
+	{
+	  if (f.sourcedropdown.value == '1') 
+	  	which_r = opt_one;
+
+      else if (f.sourcedropdown.value == '2') 
+	    which_r = opt_two;
+ 	  else 
+	    f.targetdropdown.style.display = 'none';
+
+      // did we find secondary options for the selection?
+      if (which_r) {
+
+        // reset/clear the targetdropdown pop-up
+        f.targetdropdown.innerHTML = '';
+
+        // add each option
+        for (var opt in which_r) {
+          f.targetdropdown.innerHTML += '<option>' + which_r[opt] + '</option>';
+        }
+	    f.targetdropdown.style.display = 'inline';
+      }
+    }
+  }
+</script>
+<body>
+<form name="myform" action="#">
+  <select name="sourcedropdown" onchange="FillDropDown();">
+    <option>Select one...</option>
+    <option value="1">Gujarat</option>
+    <option value="2">Metro City</option>
+  </select>
+  <select name="targetdropdown" style="display:none;">
+  </select>
+</form>
+</body>
+</html>

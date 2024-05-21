@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Function Example</title>
+
+</head>
+
+<body>
+<p id="funcdata">Max is : </p>
+<br/>
+
+
+	<input type="text" id="txtNum1" name="Number1"/>
+	<br/>
+	<input type="text" id="txtNum2" name="Number2" />
+	<br/>
+	<input type="button" value="Find Max" onClick="displayMax()" />
+	<br/><br/>
+	<input type="button" value="Multiply" onClick="multiply()" />
+
+	<br/><br/><br/>
+	<p id="additiondisp">Addition is: </p>
+
+<script>
+		function findMax(no1, no2)
+		{
+			return (no1>no2?no1:no2);
+		}
+		function displayMax()
+		{
+		//	var defno = 10;
+			var no1 = document.getElementById("txtNum1").value;
+			var no2 = document.getElementById("txtNum2").value;
+			document.getElementById("funcdata").innerHTML += findMax(no1, no2);
+			var defno = 10 * findMax(no1,no2) + Addition(no1, no2);
+			document.getElementById("additiondisp").innerHTML += defno;
+		}
+		function multiply()
+		{
+			var no1 = document.getElementById("txtNum1").value;
+			var no2 = document.getElementById("txtNum2").value;
+			document.getElementById("funcdata").innerHTML += no1 * no2;
+		}
+		function Addition()
+		{
+			var no1 = document.getElementById("txtNum1").value;
+			var no2 = document.getElementById("txtNum2").value;
+			return parseInt(no1)+parseInt(no2);
+		}
+		
+</script>
+
+</body>
+</html>

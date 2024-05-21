@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Form Event Demo</title>
+<script>
+function ChangeBGRDonFocus() 
+{
+  document.getElementById("txtName").style.background = "yellow";
+}
+
+function ChangeBGRDonLeave() 
+{
+  document.getElementById("txtName").style.background = "red";
+}
+function OnChangeFunction()
+{
+	msg.innerHTML += txtName.value;
+}
+function SubmitFunction()
+{
+	//window.open("MouseEventDemo.html","myWindow","width=400px,height=400px");
+window.open("MouseEventDemo.html", "myWindow", "location=1,status=1,toolbar=1,menubar=1,directories=1,resizable=1,scrollbars=1,height=500px,width=500px");
+}
+function ResetFunction()
+{
+	//window.locaton.reload(); //following code will not work, write at end
+	var form1 = document.FirstForm;//myForm;
+	var i=0;
+	alert("number of elements are : " + form1.length);
+	for(i=0;i<form1.length;i++)
+	{
+		form1[i].style.background="white";
+	}
+	window.locaton.reload();
+
+}
+</script>
+
+</head>
+
+<body>
+<form id="myForm" name="FirstForm" 
+	onSubmit="SubmitFunction()" onReset="ResetFunction()">
+	<label>Enter your name: </label>
+	<input type="text" id="txtName" onfocus="ChangeBGRDonFocus()" 
+		onblur="ChangeBGRDonLeave()" onChange="OnChangeFunction()">
+	<br/>
+	<p id="msg"></p>
+	<br/>
+	<input type="submit" value="Click Me">
+	<input type="reset" value="Clear Me">
+</form>
+</body>
+</html>

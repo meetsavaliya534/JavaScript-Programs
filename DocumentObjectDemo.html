@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Document Object Model</title>
+</head>
+
+<body>
+<input type="text"  value="Get Input From User" id="txtid">
+<button id="btn" onClick="OpenWindow()">A Button</button>
+<p id="lblMessage"></p>
+
+
+<script type="text/javascript">
+function OpenWindow()
+{
+	document.write("Helllo");
+	document.open();
+	document.write("Hello World");
+	var btn = document.createElement("BUTTON");        // Create a <button> element
+	var t = document.createTextNode("CLICK ME");       // Create a text node
+	btn.appendChild(t);                                // Append the text to <button>
+	document.body.appendChild(btn);
+	document.close();
+}
+
+function myFunction() 
+{
+	
+  	var x = document.activeElement.tagName;
+	lblMessage.innerHTML = x;
+	txtid.value = document.characterSet;
+	document.body.style.backgroundColor = "white";
+	lblMessage.style.color = "black";
+	lblMessage.innerHTML += document.defaultView;
+	
+	//getTagInfo();
+}
+function getTagInfo()
+{
+	var x, i, l;
+	x = document.getElementsByTagName("*");
+	l = x.length;
+	for (i = 0; i < l; i++)
+  		lblMessage.innerHTML += x[i].tagName + "<br>";
+}
+</script>
+
+</body>
+</html>

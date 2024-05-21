@@ -1,0 +1,27 @@
+<html>
+	<body>
+		<script type="text/javascript">
+			var ary1=new Array(3);
+			for(i=0;i<3;i++)
+			{
+				ary1[i]=prompt("Enter any number");
+
+			}
+			var temp=0;
+			for(i=0;i<3;i++)
+			{
+				for(j=i+1;j<3;j++)
+				{
+					if(ary1[i]>ary1[j])
+					{
+						temp=ary1[i];
+						ary1[i]=ary1[j];
+						ary1[j]=temp;
+
+					}
+				}	
+			}
+			document.write("Max value is:"+ary1[2]);
+		</script>
+	</body>
+</html>

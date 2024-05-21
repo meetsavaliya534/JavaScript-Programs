@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form id="myCarForm">
+  Favorite Car: <input type="text" name="fname" value="Volvo">
+</form>
+
+<form id="myColorForm">
+  Favorite Color: <input type="text" name="favcolor" value="Blue">
+</form>
+
+<p>Click the button to display the name of each form element in the document.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var x = document.forms;
+  var txt = "";
+  var i;
+  for (i = 0; i < x.length; i++) {
+    txt = txt +  x[i].id + "<br>";
+  }
+  document.getElementById("demo").innerHTML = txt;
+  alert(window.location);
+  alert(window.location.href);
+  window.location = "https://www.google.co.in";
+//	self.location = "https://www.google.co.in";
+//	window.location.href = "https://www.google.co.in";
+//	window.location.replace("https://www.google.co.in");
+//	window.location.assign("https://www.google.com");
+//	this.location = "https://www.amazon.in";
+}
+</script>
+
+</body>
+</html>
