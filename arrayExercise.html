@@ -1,0 +1,19 @@
+Take 5 numbers from user, store in array. And display addition of that each value. 
+
+<html>
+
+	<body>
+		<script type="text/javascript">
+			var ary=new Array(5);
+
+			var sum=0;
+			for(i=0;i<5;i++)
+			{
+				ary[i]=parseInt(prompt("Enter number",(i+1)));	
+				sum=sum+ary[i];
+
+			}	
+			document.write("Addition is:"+sum);
+		</script>
+	</body>
+</html>

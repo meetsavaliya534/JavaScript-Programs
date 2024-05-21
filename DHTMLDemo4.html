@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>DHTML Demo 4</title>
+<script type="text/javascript">
+function checkvalues()
+{
+	var name = txtName.value;
+	var age = txtAge.value;
+	var regname = /^(?=.*\d)[\w\d]{1,20}$/;
+	var regage = /^\d{2,3}$/;
+	if(regname.test(name) && regage.test(age))
+		return true;
+	else
+		return false;
+}
+function PassingParas()
+{
+	if(true)
+	{
+		var name = txtName.value;
+		var age = txtAge.value;
+		var params = "?Name=" + name + "&Age=" + age;
+		var DestUrl = "TargettedPage.html" + params;
+		window.open(DestUrl);
+		alert("Hello, new document is opened");
+	}
+	else
+	{
+		alert("Please Enter valid Name or age");
+	}
+}
+
+</script>
+</head>
+
+<body>
+<form onSubmit="PassingParas()">
+	<table>
+	<tr>
+	<td>Name : </td>
+	<td><input type="text" id="txtName"></td>
+	</tr>
+	<tr>
+	<td>Age : </td>
+	<td><input type="text" id="txtAge"></td>
+	</tr>
+	<tr>
+	<td colspan="2">
+	<input type="submit" value="submit">
+	</td>
+	</tr>
+	
+	</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>DHTML Demo 3</title>
+<script language="javascript">
+
+animations = new Array(4);
+var f=0;
+var tmout=null;
+
+function ImageLoading()
+{
+	var i=0;
+	for(i=0;i<4;i++)
+	{
+		animations[i] = new Image();
+		animations[i].src = "P" + i + ".png";
+	}
+}
+
+function animate()
+{
+	document.anImg.src = animations[f].src;
+	f=(f+1);
+	if(f>3)
+		f=0;
+	
+	tId = setTimeout("animate()",document.anForm.speed.value);
+}
+
+function chkBtn()
+{
+	
+	if(document.anForm.runAnim.value == "start")
+	{
+		document.anForm.runAnim.value="stop";
+		animate();
+	}
+	else
+	{
+		document.anForm.runAnim.value= "start";
+		clearTimeout(tId);
+		tId=null;
+	}
+}
+
+</script>
+</head>
+
+<body onLoad="ImageLoading()">
+<h1>Animation Example...</h1>
+	<p align="center">
+		<img src="P0.png" name="anImg" height="30%" width="30%" />
+		<form name="anForm">
+			<input type="button" value="start" name="runAnim" onClick="chkBtn()">
+			<input type="text" value="250" name="speed">milliseconds
+		</form>
+
+	</p>	
+	<script>
+		document.anForm.runAnim.value="start";
+		document.anForm.speed.value = 250;
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function check()
+		{
+			var nm=document.getElementById("t1").value;
+
+			if(nm=="abc")
+			{
+
+				alert("Valid Name:");
+			}	
+			else
+			{
+				alert("Invalid NAme:");
+
+			}
+
+
+		}
+
+	</script>
+
+</head>
+<body>
+	<form>
+		Name: <input type="text" id="t1"><br/>
+
+		<input type="submit" value="OK" onclick="check();">
+	</form>

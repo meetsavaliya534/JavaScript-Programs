@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Image Object Demo</title>
+</head>
+
+<body>
+<img id="myImg" src="P1.png" alt="Design is eyes of beholder" width="30%" height="30%">
+<br/>
+<button onclick="ImageFunction()">Click Me...</button>
+<br/>
+<p id="imageinfo"></p>
+
+<script>
+function ImageFunction() 
+{
+  var x = document.getElementById("myImg").src;
+  document.getElementById("imageinfo").innerHTML = x;
+  myImg.alt = "Alternate Text Changed";
+  imageinfo.innerHTML += "<br/>Complete Loading : " + myImg.complete;
+  
+ // var anotherimage = "P2.png";
+ // myImg.src = anotherimage;
+  myImg.height = (myImg.naturalHeight*60)/100;
+  imageinfo.innerHTML += "<br/>Source : " + myImg.src;
+  imageinfo.innerHTML += "<br/>Height : " + myImg.height;
+  imageinfo.innerHTML += "<br/>Natural height : " + myImg.naturalHeight;
+  imageinfo.innerHTML += "<br/>Natural width : " + myImg.naturalWidth;
+  imageinfo.innerHTML += "<br/>Alter Text : " + myImg.alt;
+}
+</script>
+</body>
+</html>

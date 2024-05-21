@@ -1,0 +1,22 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>DHTML Demo 1</title>
+</head>
+
+<body>
+	<div id="div1">
+		<h1>Here Animation is running</h1>
+	</div>
+
+	<script type="text/javascript">
+		var d = document.getElementById("div1");
+		var bgcolor = ["red","blue","yellow","pink","grey"];
+		var ncolor = 0;
+		setInterval("d.style.backgroundColor=bgcolor[ncolor++];", 1000);
+		
+	</script>
+</body>
+</html>

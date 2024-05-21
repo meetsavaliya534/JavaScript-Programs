@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	p { font-size:16px; font-family:verdana;}
+</style>
+</head>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p id="demo"></p>
+
+<p id="demo1"></p>
+
+<p id="lengthdis">Length is : </p>
+
+<p id="loop1"></p>
+
+<p id="pushpop">Push Pop operations : <br></p>
+<script language="javascript" type="text/javascript">
+	function newfunctionName()
+	{
+		document.getElementById("demo").innerHTML += "2nd FUnction";
+	}
+	var d = new Date();
+	
+	var myCars = ["HONDA", "BMW", "JAGUAR"];
+	var myArray=new Array(3);
+	myArray[0] = d;
+	myArray[1] = newfunctionName;
+	myArray[2] = myCars;	
+	
+	document.getElementById("demo").innerHTML = myArray[2] + "<br/>";
+	document.getElementById("demo").innerHTML += myArray[1] + "<br/>";	
+	document.getElementById("demo").innerHTML += myArray[0] + "<br/>";
+	
+	document.getElementById("lengthdis").innerHTML += myArray.length;
+
+	document.getElementById("lengthdis").innerHTML 
+				+= "<br/><br/>UnSorted Array : <br />" + myCars;
+	
+	myCars.sort();//sorting element and stores result in same array
+	document.getElementById("lengthdis").innerHTML += "<br/><br />Sorted Array : <br />" + myCars;
+
+	//looping an array
+	document.getElementById("loop1").innerHTML += "Looping an array using for loop";
+	var text = "<ul type=&quot;disc&quot;>"
+	var len = myCars.length;
+	for(var i=0; i<len; i++)
+		text += "<li>" + myCars[i] + "</li>";
+	text += "</ul>";
+	
+	document.getElementById("loop1").innerHTML += text;
+	
+	//looping an array using ForEach
+	text="";
+	document.getElementById("loop1").innerHTML += "Looping an array using forEach";
+	function myFunction(value)
+	{
+		text += "<li>"+value+"</li>";
+	}
+	text = "<ol type=&quot;1&quot;>"
+	myCars.forEach (myFunction);
+	text += "</ol>";
+	
+	document.getElementById("loop1").innerHTML += text;
+	
+	
+	//testing push and pop to array
+	var myFruits = ["Mango", "Orange", "Papaya", "Watermelon"]
+	document.getElementById("pushpop").innerHTML += " before PUSH :---- " + myFruits;
+	myFruits.push("Apple");
+	document.getElementById("pushpop").innerHTML += "<br/> after PUSH :---- " + myFruits;
+	myFruits.pop();
+	document.getElementById("pushpop").innerHTML += "<br/>  after POP :---- " + myFruits;
+	
+	document.getElementById("pushpop").innerHTML += "<br/><br/><br/>";
+	
+	
+	//checking array is array or not
+	document.getElementById("pushpop").innerHTML += myFruits instanceof Array;
+	document.getElementById("pushpop").innerHTML += "<br/>" +Array.isArray(myFruits);
+	document.getElementById("pushpop").innerHTML += "<br/>" +typeof myFruits;
+	document.getElementById("pushpop").innerHTML += "<br/>" +Array.isArray(myFunction);
+
+</script>
+
+</body>
+</html>
