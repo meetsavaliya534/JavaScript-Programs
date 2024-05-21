@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>User Defined Object Demo</title>
+<script type="text/javascript">
+
+	function ShowPersonDetails()
+	{
+		document.write("<br/>Name : " + this.firstname);
+		document.write("<br/>Last Name : " + this.lastname);
+		document.write("<br/>" + this.education);
+		document.write("<br/>Branch : " + this.education.branch);
+		document.write("<br/>College : " + this.education.college);
+		document.write("<br/>Descipline : " + this.education.descip); 
+	}
+	
+	function ChangeBranch(cbranch)
+	{
+		this.education.branch = cbranch;
+	}
+	function ObjPerson(fn, ln, branch, coll, desc)
+	{
+		this.firstname = fn;
+		this.lastname = ln;
+		this.education = new Object();
+		this.education.branch = branch;
+		this.education.college = coll;
+		this.education.descip = desc;
+		
+		this.details = ShowPersonDetails;
+		this.changebranch = ChangeBranch;
+	}
+	function UsingUserDfnConstructor()
+	{
+		var person = new ObjPerson("Ravi", "Khimani", "CSE", "AITS", "Degree");
+		document.write("<br/>Person Details ");
+		person.details();
+		person.changebranch("IT");
+		document.write("<br/><br/><br/>after changes ");
+		person.details();
+	}
+	
+</script>
+
+</head>
+
+<body>
+<input type="button" value="CLICK HERE" onClick="UsingUserDfnConstructor()" />
+</body>
+</html>

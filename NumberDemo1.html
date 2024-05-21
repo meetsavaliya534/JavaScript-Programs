@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Number Example</title>
+
+<script type="text/javascript">
+	var x = 0.1 + 0.2;
+	document.write(x);
+	
+	var x = (0.2 * 10 + 0.1 * 10) / 10;
+	document.write("<br/>"+x);
+	
+	var x = 40;
+	var y = 70;
+	var z = "100";
+	var result = x + y + z;
+	document.write("<br/>"+result);
+	
+	var x = "200";
+	var y = "10";
+	var z = x + y; 
+	document.write("<br/>"+z);
+	
+	var x = 231/ "Sltiet";
+	document.write("<br/>"+x); //displays NaN
+	
+	var x = 100 / "10";
+	document.write("<br/>"+x);	//displays 10
+	
+	var x = 231/ "Sltiet";
+	document.write("<br/>" + isNaN(x));// true because x is Not a Number 
+	
+	var x = NaN;
+	var y = 5;
+	var z = x + y;         // z will be NaN 
+	document.write("<br/>"+z);
+	
+	var x = NaN;
+	var y = "5";
+	var z = x + y;         // z will be NaN5 
+	document.write("<br/>"+z);
+	
+	var no = 2;	
+	while (no != Infinity) 
+	{
+		no = no * no;
+	}
+	document.write("<br/>"+no);
+	
+	var x =  2 / 0;       // x will be Infinity
+	var y = -2 / 0;       // y will be -Infinity
+	document.write("<br/>"+x);
+	document.write("<br/>"+y);
+</script>
+</head>
+
+<body>
+</body>
+</html>

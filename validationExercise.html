@@ -1,0 +1,82 @@
+Take Name, Password, Mobile,Pincode from user. check that any field must not be blank. 
+Name have 6 alphabets, not any numbers
+Password must be of 8 characters. 
+Mobile number must be of 10 digits only
+Pincode must be of 6 digits only.
+
+<html>
+	<head>
+		<script type="text/javascript">
+			function checkData()
+			{
+			var nm=document.getElementById("t1").value;	
+			var pwd=document.getElementById("t2").value;	
+			var mob=document.getElementById("t3").value;	
+			var pin=document.getElementById("t4").value;	
+			var lnm=nm.length;
+			var lpwd=pwd.length;
+			var lmob=mob.length;
+			var lpin=pin.length;
+
+			if(lnm==0 || lpwd==0 || lmob==0 || lpin==0)
+			{
+				alert("Fill all details::");
+				document.getElementById("t1").focus();
+			}
+			if(lnm==6 && (isNaN(nm)))
+			{
+				alert("Valid name");
+			}
+			else
+			{
+				alert("Invalid name");
+			}
+
+			if(lpwd==8)
+			{
+				alert("Valid password");
+			}
+			else
+			{
+				alert("Invalid password::");
+			}
+
+			if(lmob==10 && (!isNaN(mob)))	
+			{
+				alert("Valid mobile");
+
+			}
+			else
+			{
+				alert("Invalid mobile");
+			}
+
+
+			if(lpin==6 && (!isNaN(pin)))	
+			{
+				alert("Valid pincode");
+
+			}
+			else
+			{
+				alert("Invalid pincode");
+			}
+
+
+		}
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		Name: <input type="text" id="t1"/><br/>
+		Password: <input type="text" id="t2"/><br/>
+		Mobile: <input type="text" id="t3"/><br/>
+		PinCode: <input type="text" id="t4"/><br/>
+
+		<input type="submit" value="OK" onclick="checkData();" />
+	</body>
+</html>

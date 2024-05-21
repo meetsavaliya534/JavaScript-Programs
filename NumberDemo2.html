@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Number Example</title>
+
+<script type="text/javascript">
+	var x = 123;
+	document.write("toString() function<br/>");
+	document.write("<br/>" +x.toString());            // returns 123 from variable x
+	document.write("<br/>" +(123).toString());        // returns 123 from literal 123
+	document.write("<br/>" +(100 + 23).toString());   // returns 123 from expression 100 + 23 
+
+
+	var x = 9.656;
+	document.write("toExponential() function<br/>");
+	document.write("<br/>" +x.toExponential(2));     // returns 9.66e+0
+	document.write("<br/>" +x.toExponential(4));     // returns 9.6560e+0
+	document.write("<br/>" +x.toExponential(6));     // returns 9.656000e+0 
+
+
+	var x = 9.656;
+	document.write("toFixed() function<br/>");
+	document.write("<br/>" +x.toFixed(0));           // returns 10
+	document.write("<br/>" +x.toFixed(2));           // returns 9.66
+	document.write("<br/>" +x.toFixed(4));           // returns 9.6560
+	document.write("<br/>" +x.toFixed(6));           // returns 9.656000 
+	
+	var x = 9.656;
+	document.write("toPrecesion() function");
+	document.write("<br/>" +x.toPrecision());        // returns 9.656
+	document.write("<br/>" +x.toPrecision(2));       // returns 9.7
+	document.write("<br/>" +x.toPrecision(4));       // returns 9.656
+	document.write("<br/>" +x.toPrecision(6));       // returns 9.65600 
+	
+	var x = 123;
+	document.write("valueof() function<br/>");
+	document.write("<br/>" +x.valueOf());            // returns 123 from variable x
+	document.write("<br/>" +(123).valueOf());        // returns 123 from literal 123
+	document.write("<br/>" +(100 + 23).valueOf());   // returns 123 from expression 100 + 23 
+	
+	document.write("Number() constructor<br/>");
+	document.write("<br/>" +Number(true));          // returns 1
+	document.write("<br/>" +Number(false));         // returns 0
+	document.write("<br/>" +Number("10"));          // returns 10
+	document.write("<br/>" +Number("  10"));        // returns 10
+	document.write("<br/>" +Number("10  "));        // returns 10
+	document.write("<br/>" +Number(" 10  "));       // returns 10
+	document.write("<br/>" +Number("10.33"));       // returns 10.33
+	document.write("<br/>" +Number("10,33"));       // returns NaN
+	document.write("<br/>" +Number("10 33"));       // returns NaN
+	document.write("<br/>" +Number("John"));        // returns NaN 
+	
+	document.write("<br/>" +Number(new Date("2019-02-15")));    // returns 1506729600000
+	
+	document.write("parseInt() conversion<br/>");
+	document.write("<br/>" +parseInt("10"));         // returns 10
+	document.write("<br/>" +parseInt("10.33"));      // returns 10
+	document.write("<br/>" +parseInt("10 20 30"));   // returns 10
+	document.write("<br/>" +parseInt("10 years"));   // returns 10
+	document.write("<br/>" +parseInt("years 10"));   // returns NaN  
+	
+	document.write("parseFloat() conversion<br/>");
+	document.write("<br/>" +parseFloat("10"));        // returns 10
+	document.write("<br/>" +parseFloat("10.33"));     // returns 10.33
+	document.write("<br/>" +parseFloat("10 20 30"));  // returns 10
+	document.write("<br/>" +parseFloat("10 years"));  // returns 10
+	document.write("<br/>" +parseFloat("years 10"));  // returns NaN 
+	
+	
+	document.write("<br/>Max Value : " + Number.MAX_VALUE);
+	document.write("<br/>Min Value : " + Number.MIN_VALUE);
+	document.write("<br/>Positive infinity Value : " + Number.POSITIVE_INFINITY);
+	document.write("<br/>1/0 Value : " + 1 / 0);
+	document.write("<br/>Negative infinity Value : " + Number.NEGATIVE_INFINITY);
+	document.write("<br/>-1/0 Value : " + (-1 / 0));
+	document.write("<br/>Number NaN Value : " + (Number.NaN));
+	
+	
+	var x = 6;
+	var y = x.MAX_VALUE;    // y becomes undefined 
+	
+</script>
+</head>
+
+<body>
+</body>
+</html>

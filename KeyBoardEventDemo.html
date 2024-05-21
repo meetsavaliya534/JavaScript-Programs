@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>KeyBoard Event Demo</title>
+</head>
+
+<body>
+Enter your name: <input type="text" id="txtName" 
+	onkeyup="KeyUpFunction()" onKeyDown="KeyDownFunction(event)">
+<br/>
+<p id="msg"></p>
+
+<script>
+function KeyUpFunction() 
+{
+  var x = document.getElementById("txtName");
+  x.value = x.value.toUpperCase();
+}
+function KeyDownFunction(e) 
+{
+  msg.innerHTML += " " + e.key;
+  
+}
+
+</script>
+
+</body>
+</html>

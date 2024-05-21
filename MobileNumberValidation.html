@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Show/Hide Password</title>
+<style>
+	td {font-size:14px; font-family:verdana; text-align:center; }
+</style>
+
+<script>
+	function CheckNumber()
+	{
+		var exp=/^[0-9]+$/;
+		var x = document.getElementById("txtMoNumber").value;
+		if(x.length != 10)
+		{
+				alert("Please enter mobile number of 10 digits");
+				document.getElementById("txtMoNumber").value="";
+				document.getElementById("txtMoNumber").focus();
+		}
+		else
+		{ 
+			if (x.charAt(0) != '9' && x.charAt(0) != '8')
+			{
+					alert("Please enter mobile number starts from 8 or 9...");
+					document.getElementById("txtMoNumber").value="";
+					document.getElementById("txtMoNumber").focus();
+			}
+			else
+			{
+				if(x.match(exp))
+				{
+				var name = document.getElementById("txtUserName").value;
+				alert("Hello, " + name + " registered successfully");
+				}
+				else
+				{
+					alert("All must be numbers::");
+				}
+
+			}
+		}
+	}
+</script>
+</head>
+<body>
+<table border="1" cellpadding="4" bordercolor="#CC3399">
+<tr>
+<td>UserName : </td>
+<td><input type="text" id="txtUserName"></td>
+</tr>
+<tr>
+<td>Mobile Number : </td>
+<td><input type="text" id="txtMoNumber"></td>
+</tr>
+
+<tr>
+<td colspan="2"><input type="button" onClick="CheckNumber()" value="Register"></td>
+</tr>
+</table>
+</body>
+</html>

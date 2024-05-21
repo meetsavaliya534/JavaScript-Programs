@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Regular Expression Demo</title>
+</head>
+
+<body>
+<script type="text/javascript">
+
+	function searchreplace()
+	{
+		//using search() function
+		var str = "Hello! Good Morning All ...";
+		
+		var n = str.search("All");	//without modifier, case sensitive
+		document.write(n + "<br/>");
+
+		n = str.search("all");	//without modifier, case sensitive
+		document.write(n + "<br/>");
+		document.write("<br/>now its using RegExp <br/>");
+		n = str.search(/all/i);	//with modifier, no case sensitive
+		document.write(n + "<br/>");
+	
+	
+		//using replace() function
+		document.write("<br/>now its using Replace Function <br/>");
+		document.write("<br />replace using string<br/>");
+		var res = str.replace("Morning", "Evening");	//changing
+		document.write(res);
+	
+		document.write("<br />replace using string<br/>");
+		var res = str.replace("evening", "Morning"); //no change
+		document.write(res);
+	
+		document.write("<br />replace using Regular Expression<br/>");
+		var res = str.replace(/morning/i, "Evening");  //change
+		document.write(res);
+	}
+	
+	function modifiers()
+	{
+		var str = "Is there availabe is in this statement?";
+		var pat = /is/ig;
+		var res = str.match(pat);
+		document.write("<br/>Using Match : " + res);
+		var res = str.search(pat);
+		document.write("<br/>Using Search : " + res);
+
+		var str = "\nIs there availabe \nis in th\nis statement?";
+		var pat = /^is/igm;
+		var res = str.match(pat);
+		document.write("<br/>Using Match : " + res);
+		var res = str.search(pat);
+		document.write("<br/>Using Search : " + res);
+	}
+	
+	function BracketRegExp()
+	{
+		var str = "9821791421043";
+  		var pat = /[0-6]/g;  
+  		var res = str.match(pat);
+  		document.write("<br/> match digits are : " + res + " in " + str);
+		
+		var str = "Today is great day";
+		var pat = /[a-g]/g; 
+  		var res = str.match(pat);
+		document.write("<br/> match chars are : " + res + " in " + str);
+	
+		var str = "digit, number, dig, num, di, number, digit";
+		var pat = /(num|dig)/g;
+		var res = str.match(pat);
+		document.write("<br/> match num or dig are : " + res + " in " + str);
+ 	
+	}
+	
+	function Metacharacters()
+	{
+		var str = "My number is 9998887774";
+  		var pat = /\D/g;  
+  		var res = str.match(pat);
+  		document.write("<br/> match digits are : " + res + " in " + str);
+		
+		var str = "Let count space in this statement";
+		var pat = /\W/g; 
+  		var res = str.match(pat);
+		document.write("<br/> match spaces are : " + res + " in " + str);
+	
+		var str = "digit, number, dig, num, di, number, digit";
+		var pat = /(num|dig)/g;
+		var res = str.match(pat);
+		document.write("<br/> match patterns are : " + res + " in " + str);
+ 	
+	}
+	
+	function Quantifiers()
+	{
+		var str = "Hellooo World! Good Morning...";
+  		var pat = /lo+/g;  
+  		var res = str.match(pat);
+  		document.write("<br/> matches are : " + res + " in " + str);
+		
+		var str = "Hellooo World! Good Morning...";
+  		var pat = /(lo)*/g;  
+  		var res = str.match(pat);
+  		document.write("<br/> matches are : " + res + " in " + str);
+		
+		var str = "Hellooo World! Good Morning...";
+  		var pat = /lo?/g;  
+  		var res = str.match(pat);
+  		document.write("<br/> matches are : " + res + " in " + str);
+		
+	}
+	
+	function testFunc()
+	{
+		var str="abc@gmail.com";
+		var rexp= new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+		if(rexp.test(str))
+			document.write("\nMail id is OK");
+		else
+			document.write("\nProvide proper mail id");
+			
+			
+		var str = "cdeq1qaa@f";
+		var rexp = new RegExp(/^(?=.*\d)(?=.*[!@#$%^&*])[\w\d!@#$%^&*]{8,14}$/);
+	
+//		positive lookahead
+//		^(?=.*\d)(?=.*[!@#$%^&*])[\w\d!@#$%^&*]{8,14}$	
+//		negative lookahead	
+//		^(?!.*\d)(?=.*[!@#$%^&*])[\w\d!@#$%^&*]{8,14}$
+
+		if(rexp.test(str))
+			document.write("<br/>Password is oK");
+		else
+			document.write("<br/>Provide proper Password");
+			
+	}
+	
+	function execFunc()
+	{
+		var str = "Is there availabe is in this statement?";
+		var pat = /is/;
+		var res = pat.exec(str);	//match exec
+		document.write("<br/>match found for : " + res[0]);
+		document.write("<br/>on location : " + res.index);
+	}
+</script>
+<input type="button" value="Click Me" onClick="searchreplace()" />
+</body>
+</html>

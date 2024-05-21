@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Multiplication Table</title>
+</head>
+
+<body>
+<script type="text/javascript">
+alert("Web Page is loaded for multiplication table");
+
+var number = prompt("Enter number for multiplication table : ", 5);
+
+
+PrintText("<h1> Displaying Mulitiplication Table </h1>");
+PrintText("<br /><br />");
+PrintText("<table border=\"1\" align=\"center\" cellspacing=\"10\" cellpadding=\"5\">");
+PrintText("<caption align=\"top\">Multiplication Table for "+ number + "</caption>");
+PrintText("<tr>");
+PrintText("<th>Number</th>");
+PrintText("<th>Result</th>");
+PrintText("</tr>");
+var i;
+for(i=0;i<=10;i++)
+{
+	PrintText("<tr>");
+	PrintText("<td align=\"center\">")
+	PrintText(number)
+	PrintText(" X ")
+	PrintText(i);
+	PrintText(" = </td>");
+	PrintText("<td>");
+	PrintText(number*i);
+	PrintText("</td>");
+	PrintText("</tr>");
+}
+PrintText("</table>");
+
+function PrintText(Text)
+{
+	document.write(Text);
+}
+
+var c = confirm("Do you want to close it?");
+if (c==true)
+	document.write("Close window");
+else
+	document.write("don't close window");
+		
+</script>
+</body>
+</html>

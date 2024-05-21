@@ -1,0 +1,41 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function checkPincode()
+		{
+			var x=document.getElementById("pin").value;
+			if(x.length!=6)
+			{
+				alert("Plz enter pincode of 6 digits");
+				document.getElementById("pin").value="";
+				document.getElementById("pin").focus();
+			}	
+			else
+			{
+				if(x.charAt(0)!=3)
+				{
+					alert("Plz enter valid pincode starting from 3");
+					document.getElementById("pin").value="";
+					document.getElementById("pin").focus();					
+				}
+				else
+				{
+					alert("Valid pincode");
+				}
+
+			}
+
+
+		}	
+
+	</script>
+
+</head>
+
+<body>
+	Enter PinCode: <input type="text" id="pin"/>
+
+	<input type="submit" value="OK" onclick="checkPincode();"/>
+
+
+</body>

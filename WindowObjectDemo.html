@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Window Object Demo</title>
+</head>
+
+<body>
+
+<script type="text/javascript">
+
+
+	window.history.length
+	function PMsg(str)
+	{
+		lblMessage.innerHTML = str;
+	}
+	
+	function openWin() 
+	{
+  		myWindow = window.open("", "myWindow", "width=500, height=250");
+	}
+	function closeWin() 
+	{
+		if (myWindow) 
+			myWindow.close();
+  	}
+	function checkWin() 
+	{
+  		if (!myWindow) 
+    		PMsg("myWindow has never been opened!");
+  		else 
+		{
+    		if (myWindow.closed) 
+				PMsg("myWindow has been closed!");
+    		else
+			{
+				alert("Window has Width :" + myWindow.innerWidth + " and Height :" + myWindow.innerHeight);
+				alert("Window has frames : " + this.length);
+ 	     		PMsg("'myWindow' has not been closed!");
+			}
+    	}
+  	}
+
+	function OpenNewWindow() 
+	{
+  		var myWindow = window.open("", "New Window", "width=500, height=250");
+  		myWindow.document.write("<p>This is New Window");
+  		myWindow.document.write("<br>ScreenLeft: " + self.screenLeft);
+  		myWindow.document.write("<br>ScreenTop: " + self.screenTop + "</p>");
+	}
+</script>
+
+<button onclick="openWin()">Open "myWindow"</button>
+<button onclick="closeWin()">Close "myWindow"</button>
+<br><br>
+<button onclick="checkWin()">Has "myWindow" been closed?</button>
+<br><br>
+<p id="lblMessage" style="font-size:16px; color:red;"></p>
+
+<iframe src="www.google.com" style="float:right"></iframe>
+<iframe src="www.yahoo.com" style="float:right"></iframe>
+
+<button onclick="OpenNewWindow()">GET Screen LEFT and RIGHT Location</button>
+</body>
+</html>

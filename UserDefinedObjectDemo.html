@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>User Defined Object Demo</title>
+<script type="text/javascript">
+
+	function UsingObjectLiteral()
+	{
+		var person = { 	firstname:"Ravi",
+						lastname:"Khimani",
+						branch:"CSE" }
+					
+		document.write("Object Values Are : " + person.firstname);
+		document.write("<br/> " + person.lastname + "<br/>" + person.branch);
+	}
+	
+	function UsingObjectConstructor()
+	{
+		var person = new Object();
+		person.firstname="Ravi";
+		person.lastname="Khimani";
+		person.Education=new Object();
+		person.Education.branch = "CSE";
+		person.Education.college="AITS";
+		person.Education.descip="Degree";
+		
+		document.write("<br/>Person Details ");
+		document.write(person);
+		document.write("<br/>" + person.firstname);
+		document.write("<br/>" + person.lastname);
+		document.write("<br/>" + person.Education);
+		document.write("<br/>" + person.Education.branch);
+		document.write("<br/>" + person.Education.college);
+		document.write("<br/>" + person.Education.descip); 
+	}
+	
+	function ObjPerson(fn, ln, branch, coll, desc)
+	{
+		this.firstname = fn;
+		this.lastname = ln;
+		this.education = new Object();
+		this.education.branch = branch;
+		this.education.college = coll;
+		this.education.descip = desc;
+	}
+	function UsingUserDfnConstructor()
+	{
+		var person = new ObjPerson("Ravi", "Khimani", "CSE", "AITS", "Degree");
+		document.write("<br/>Person Details ");
+		document.write(person);
+		document.write("<br/>" + person.firstname);
+		document.write("<br/>" + person.lastname);
+		document.write("<br/>" + person.education);
+		document.write("<br/>" + person.education.branch);
+		document.write("<br/>" + person.education.college);
+		document.write("<br/>" + person.education.descip); 
+	}
+	
+</script>
+
+</head>
+
+<body>
+<input type="button" value="CLICK HERE" onClick="UsingUserDfnConstructor()" />
+</body>
+</html>

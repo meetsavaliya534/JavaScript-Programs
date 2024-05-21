@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Search Word from given string</title>
+<script type="text/javascript">
+	function getWordPos()
+	{
+		var x = txtData.value;
+		var y = txtSearch.value;
+		var pos = x.search(/good/i);
+		if(pos!= -1)
+			lblmessage.innerHTML = pos;
+		else
+			lblmessage.innerHTML = "Not Present";
+	}
+</script>
+
+</head>
+
+<body>
+<table align="center" border="1" width="70%">
+<tr>
+<td>Text
+</td>
+<td>
+<input type="text" id="txtData" />
+</td> 
+</tr>
+<tr>
+<td>Word to search
+</td>
+<td>
+<input type="text" id="txtSearch" />
+</td> 
+</tr>
+<tr>
+<td colspan="2">
+<input type="button" id="btnGet" onClick="getWordPos()" value="Get Word" />
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<p id="lblmessage" style="color:red; font-size:16px"></p></td>
+</tr>
+
+</table>
+</body>
+</html>

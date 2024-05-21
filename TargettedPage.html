@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>DHTML Demo 4 Receiver Page</title>
+</head>
+
+<body>
+<script>
+ 
+var queryString = decodeURIComponent(window.location.search);
+queryString = queryString.substring(1);
+var queries = queryString.split("&");
+for (var i = 0; i < queries.length; i++)
+{
+  
+  	var pos = queries[i].indexOf('=');
+    if (pos > 0) 
+	{
+	    var key = queries[i].substring(0,pos);
+	    var val = queries[i].substring(pos+1);
+		document.write("<br/>Key = " + key + " and Value = " + val); 
+	}
+}
+ 
+</script> 
+</body>
+</html>
